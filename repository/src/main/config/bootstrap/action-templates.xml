@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<view:view xmlns:view="http://www.alfresco.org/view/repository/1.0" xmlns:cm="http://www.alfresco.org/model/content/1.0"
+    xmlns:sys="http://www.alfresco.org/model/system/1.0" xmlns:app="http://www.alfresco.org/model/application/1.0">
+
+    <cm:folder view:childName="app:acosix_action_templates">
+        <view:properties>
+            <cm:name>\${${moduleId}.spaces.templates.actionTemplates.name}</cm:name>
+        </view:properties>
+        <view:associations>
+            <cm:contains>
+                <cm:folder view:childName="app:webhook_payload_templates">
+                    <view:properties>
+                        <cm:name>\${${moduleId}.spaces.templates.webhookPayloadTemplates.name}</cm:name>
+                    </view:properties>
+                    <view:associations>
+                        <cm:contains>
+                            <cm:content view:childName="cm:discord_new_file.json.ftl">
+                                <view:properties>
+                                    <cm:name>discord_new_file.json.ftl</cm:name>
+                                    <cm:title>\${${moduleId}.content.templates.discordNewFilePayloadTemplate.title}</cm:title>
+                                    <cm:content>contentUrl=classpath:alfresco/module/${moduleId}/bootstrap/content/discord_new_file.json.ftl|mimetype=text/plain|size=|encoding=UTF-8</cm:content>
+                                </view:properties>
+                            </cm:content>
+                        </cm:contains>
+                    </view:associations>
+                </cm:folder>
+            </cm:contains>
+        </view:associations>
+    </cm:folder>
+
+</view:view>

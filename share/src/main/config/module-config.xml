@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!-- 
+ Copyright 2019 Acosix GmbH
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+ -->
+<alfresco-config>
+
+    <config evaluator="string-compare" condition="${moduleId}.webhookCall">
+        <forms>
+            <form>
+                <field-visibility>
+                    <show id="urlTemplate" />
+                    <show id="urlTemplateArguments" />
+                    <show id="payloadTemplate" />
+                    <show id="payloadTemplateArguments" />
+                    <show id="payloadMimetype" />
+                    <show id="headers" />
+                </field-visibility>
+                <edit-form template="/de/acosix/actions/components/form/simpleActionDialog.ftl" />
+                <appearance>
+                    <set id="primary" template="/org/alfresco/components/form/2-column-set.ftl" />
+
+                    <field set="primary" id="urlTemplate" />
+                    <field set="primary" id="urlTemplateArguments">
+                        <control template="/org/alfresco/components/form/controls/textarea.ftl" />
+                    </field>
+
+                    <field set="primary" id="payloadTemplate" />
+                    <field set="primary" id="payloadTemplateArguments">
+                        <control template="/org/alfresco/components/form/controls/textarea.ftl" />
+                    </field>
+
+                    <field set="primary" id="payloadMimetype" />
+                    <field set="primary" id="headers">
+                        <control template="/org/alfresco/components/form/controls/textarea.ftl" />
+                    </field>
+                </appearance>
+            </form>
+        </forms>
+    </config>
+
+    <config evaluator="string-compare" condition="DocLibActions">
+        <actions>
+            <action id="${moduleId}.webhookCall" type="javascript" label="${moduleId}.webhookCall">
+                <param name="function">onActionFormDialog</param>
+                <param name="itemKind">action</param>
+                <param name="itemId">${moduleId}.webhookCall</param>
+                <param name="mode">create</param>
+                <param name="destination">{node.nodeRef}</param>
+                <param name="successMessage">${moduleId}.webhookCall.success</param>
+                <param name="failureMessage">${moduleId}.webhookCall.failure</param>
+            </action>
+        </actions>
+    </config>
+
+</alfresco-config>

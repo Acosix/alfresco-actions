@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>de.acosix.alfresco.maven</groupId>
+        <artifactId>de.acosix.alfresco.maven.module.parent-5.0.d</artifactId>
+        <version>1.1.0</version>
+    </parent>
+
+    <groupId>de.acosix.alfresco.actions</groupId>
+    <artifactId>de.acosix.alfresco.actions.parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>Acosix Alfresco Actions - Parent</name>
+    <description>Addon to provide generic, re-usable actions for Alfresco Repository / Share</description>
+    <url>https://github.com/Acosix/alfresco-actions</url>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git:git@github.com:Acosix/alfresco-actions.git</connection>
+        <developerConnection>scm:git:git@github.com:Acosix/alfresco-actions.git</developerConnection>
+        <url>git@github.com:Acosix/alfresco-actions.git</url>
+    </scm>
+
+    <developers>
+        <developer>
+            <id>AFaust</id>
+            <name>Axel Faust</name>
+            <email>axel.faust@acosix.de</email>
+            <organization>Acosix GmbH</organization>
+            <roles>
+                <role>Founder</role>
+                <role>Architect</role>
+                <role>Developer</role>
+            </roles>
+            <properties>
+                <twitter>twitter.com/ReluctantBird83</twitter>
+            </properties>
+        </developer>
+    </developers>
+
+    <properties>
+        <messages.path>acosix/actions</messages.path>
+        <messages.packageId>acosix.actions</messages.packageId>
+        <moduleId>acosix-actions</moduleId>
+
+        <!-- Java 7 is out of support -->
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <build>
+
+    </build>
+
+    <modules>
+        <module>repository</module>
+        <module>share</module>
+    </modules>
+</project>
