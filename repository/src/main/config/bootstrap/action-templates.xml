@@ -21,6 +21,13 @@
                                     <cm:content>contentUrl=classpath:alfresco/module/${moduleId}/bootstrap/content/discord_new_file.json.ftl|mimetype=text/plain|size=|encoding=UTF-8</cm:content>
                                 </view:properties>
                             </cm:content>
+                            <cm:content view:childName="cm:mattermost_new_file.json.ftl">
+                                <view:properties>
+                                    <cm:name>mattermost_new_file.json.ftl</cm:name>
+                                    <cm:title>\${${moduleId}.content.templates.mattermostNewFilePayloadTemplate.title}</cm:title>
+                                    <cm:content>contentUrl=classpath:alfresco/module/${moduleId}/bootstrap/content/mattermost_new_file.json.ftl|mimetype=text/plain|size=|encoding=UTF-8</cm:content>
+                                </view:properties>
+                            </cm:content>
                         </cm:contains>
                     </view:associations>
                 </cm:folder>
