@@ -32,7 +32,7 @@
 
         <module>
             <id>${moduleId} - Webhook Action Extension</id>
-            <description>${project.name} - Webhook Action Extension</description>
+            <description>${project.name} - Expose Webhook Action in DocLib</description>
             <version>${noSnapshotVersion}</version>
 
             <configurations>
