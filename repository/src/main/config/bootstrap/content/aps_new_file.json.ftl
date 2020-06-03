@@ -1,7 +1,7 @@
 <#escape x as jsonUtils.encodeJSONString(x)>{
-    "signalName":"mysignal",
-    "tenantId":"tenant_1",
-    "async":"false",
+    "signalName":"${signalName!"mysignal"}",
+    "tenantId":"${tenantId!"tenant_1"}",
+    "async":"${async!"false"}",
     "variables":
     [
         {
